@@ -1,0 +1,5 @@
+export { default as NavBar } from './navbar/NavBar'
+export { default as Feed } from './feed/Feed'
+export { default as SearchFeed } from './searchfeed/SearchFeed'
+export { default as ChannelDetail } from './channeldetail/ChannelDetail'
+export { default as VideoDetail } from './videodetail/VideoDetail'
