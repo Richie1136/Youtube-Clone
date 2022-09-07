@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Box, Stack, Typography } from '@mui/material'
-import SideBar from '../sidebar/SideBar'
+import { SideBar, Videos } from '../index'
+
 
 
 // px - stands for horizontal padding
@@ -21,6 +22,7 @@ const Feed = () => {
         <Typography variant='h4' fontWeight='bold' mb={2} sx={{ color: 'white' }}>
           New <span style={{ color: '#f31503' }}>Videos</span>
         </Typography>
+        <Videos videos={[]} />
       </Box>
     </Stack>
   )
