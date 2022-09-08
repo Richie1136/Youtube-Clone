@@ -1,10 +1,16 @@
+import { Stack, Box } from "@mui/material"
 
 const Videos = ({ videos }) => {
-  console.log(videos)
+
   return (
-    <div>
-      <h2>Apple</h2>
-    </div>
+    <Stack direction="row" flexWrap='wrap' justifyContent="start" gap={2}>
+
+      {videos?.map((video) => (
+        <Box key={video.id.videoId}>
+          <h2 style={{ color: 'white' }}>{video.snippet.title}</h2>
+        </Box>
+      ))}
+    </Stack>
   )
 }
 
