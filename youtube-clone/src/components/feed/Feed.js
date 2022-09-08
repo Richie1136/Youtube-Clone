@@ -10,10 +10,20 @@ import { fetchApi } from '../../api/Api'
 const Feed = () => {
 
   const [selected, setSelected] = useState('New')
+  const [videos, setVideos] = useState([])
 
   useEffect(() => {
-    fetchApi(`search?part=snippet&q=${selected}`)
+    const fetchData = async () => {
+      try {
+        const response = await fetchApi(`search?part=snippet&q=${selected}`)
+        setVideos(response.items)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchData()
   }, [selected])
+
 
 
 
@@ -29,7 +39,7 @@ const Feed = () => {
         <Typography variant='h4' fontWeight='bold' mb={2} sx={{ color: 'white' }}>
           {selected} <span style={{ color: '#f31503' }}>Videos</span>
         </Typography>
-        <Videos videos={[]} />
+        <Videos videos={videos} />
       </Box>
     </Stack>
   )
