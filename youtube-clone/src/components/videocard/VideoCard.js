@@ -15,6 +15,19 @@ const VideoCard = ({ video }) => {
       <NavLink to={video.videoId ? `/video/${video.videoId}` : demoVideoUrl}>
         <CardMedia image={video.snippet?.thumbnails?.high?.url} alt={video.snippet.title} sx={{ width: 358, height: 180 }} />
       </NavLink>
+      <CardContent sx={{ backgroundColor: '#1e1e1e', height: 106 }}>
+        <NavLink to={video.videoId ? `/video/${video.videoId}` : demoVideoUrl}>
+          <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
+            {video.snippet.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
+          </Typography>
+        </NavLink>
+        <NavLink to={video.snippet.channelId ? `/channel/${video.snippet.channelId}` : demoChannelUrl}>
+          <Typography variant="subtitle2" fontWeight="bold" color="gray">
+            {video.snippet.channelTitle || demoChannelTitle}
+            <CheckCircle sx={{ fontSize: 12, color: 'gray', ml: 5 }} />
+          </Typography>
+        </NavLink>
+      </CardContent>
     </Card>
   )
 }
