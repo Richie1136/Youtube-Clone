@@ -44,6 +44,7 @@ const ChannelDetail = () => {
           height: '300px'
         }}
         />
+        <ChannelCard channelDetail={channelDetail} />
       </Box>
 
       <h2>{channelDetail?.snippet?.title}</h2>
