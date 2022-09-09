@@ -6,6 +6,7 @@ import { Search } from '@mui/icons-material'
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('')
 
+  const navigate = useNavigate()
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value)
@@ -13,6 +14,7 @@ const SearchBar = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    navigate(`/search/${searchTerm}`)
   }
 
 
