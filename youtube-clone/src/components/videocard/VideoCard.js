@@ -22,7 +22,7 @@ const VideoCard = ({ video }) => {
         <NavLink to={video.snippet.channelId ? `/channel/${video.snippet.channelId}` : demoChannelUrl}>
           <Typography variant="subtitle2" fontWeight="bold" color="gray">
             {video.snippet.channelTitle || demoChannelTitle}
-            <CheckCircle sx={{ fontSize: 12, color: 'gray', ml: 5 }} />
+            <CheckCircle sx={{ fontSize: 12, color: 'gray', ml: '5px' }} />
           </Typography>
         </NavLink>
       </CardContent>
