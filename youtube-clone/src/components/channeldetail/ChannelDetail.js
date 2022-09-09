@@ -44,10 +44,12 @@ const ChannelDetail = () => {
           height: '300px'
         }}
         />
-        <ChannelCard channelDetail={channelDetail} marginTop="-95px" />
+        <ChannelCard channelDetail={channelDetail} marginTop="-115px" />
       </Box>
-
-      <h2>{channelDetail?.snippet?.title}</h2>
+      <Box display='flex' p="2">
+        <Box sx={{ mr: { sm: '100px' } }} />
+        <Videos videos={videos} />
+      </Box>
     </Box>
   )
 }
