@@ -12,6 +12,7 @@ import Loading from '../loading/Loading'
 const VideoDetail = () => {
 
   const [videoDetails, setVideoDetails] = useState(null)
+  const [videos, setVideos] = useState([])
 
   const { id } = useParams()
 
@@ -23,6 +24,13 @@ const VideoDetail = () => {
       try {
         const response = await fetchApi(`videos?part=snippet,statistics&id=${id}`)
         setVideoDetails(response?.items[0])
+      } catch (error) {
+        console.log(error)
+      }
+      try {
+        const response = await fetchApi(`search?part=snippet&relatedToVideoId=${id}&type=video`)
+        console.log(response.items)
+        setVideos(response.items)
       } catch (error) {
         console.log(error)
       }
