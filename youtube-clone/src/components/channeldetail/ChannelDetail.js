@@ -12,8 +12,6 @@ const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState(null)
   const [videos, setVideos] = useState([])
 
-  console.log(channelDetail)
-  console.log(videos)
 
 
   useEffect(() => {
