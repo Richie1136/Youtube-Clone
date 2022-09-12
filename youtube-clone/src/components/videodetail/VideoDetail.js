@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player'
 import { Box, Typography, Stack } from '@mui/material'
 import { CheckCircle } from '@mui/icons-material'
 
-import { Video } from '../index'
+import { Videos } from '../index'
 import { fetchApi } from '../../api/Api'
 import Loading from '../loading/Loading'
 
@@ -66,6 +66,9 @@ const VideoDetail = () => {
               </Stack>
             </Stack>
           </Box>
+        </Box>
+        <Box px={2} py={{ xs: 5, md: 1 }} justifyContent='center' alignItems="center">
+          <Videos videos={videos} direction='column' />
         </Box>
       </Stack>
     </Box>
