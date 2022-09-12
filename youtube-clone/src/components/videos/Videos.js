@@ -4,8 +4,6 @@ import Loading from "../loading/Loading"
 
 const Videos = ({ videos, direction }) => {
 
-  console.log(videos)
-
   if (!videos?.length) return <Loading />
 
   return (
