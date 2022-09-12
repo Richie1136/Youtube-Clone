@@ -15,7 +15,7 @@ const VideoDetail = () => {
 
   const { id } = useParams()
 
-  console.log(videoDetails.snippet)
+  console.log(videoDetails?.snippet)
 
 
   useEffect(() => {
@@ -44,15 +44,17 @@ const VideoDetail = () => {
             <Stack direction='row' justifyContent="space-between" sx={{ color: 'white' }} py={1} px={2}>
               <NavLink to={`/channel/${videoDetails?.snippet?.channelId}`}>
                 <Typography variant={{ sm: 'subtitle1', md: 'h6' }} color="white">
-                  {videoDetails.snippet.channelTitle}
+                  {videoDetails?.snippet.channelTitle}
                   <CheckCircle sx={{ fontSize: '12px', color: 'gray', ml: '5px' }} />
                 </Typography>
               </NavLink>
-              <Stack>
+              <Stack direction='row' gap='20px' alignItems="center">
                 <Typography variant='body1' sx={{ opacity: 0.7 }}>
                   {parseInt(videoDetails?.statistics?.viewCount).toLocaleString()} views
                 </Typography>
-                <Typography></Typography>
+                <Typography variant='body1' sx={{ opacity: 0.7 }}>
+                  {parseInt(videoDetails?.statistics?.likeCount).toLocaleString()} likes
+                </Typography>
               </Stack>
             </Stack>
           </Box>
